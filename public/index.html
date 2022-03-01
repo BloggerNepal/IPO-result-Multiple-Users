@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="https://isthisaword.bloggernepal.com/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>IPO Result of Multiple Users</title>
+</head>
+
+<body>
+
+    <h1>IPO Result of Multiple BOID at Once</h1>
+    <div class="content">
+        <p>
+            Looking for a way to check IPO result of multiple Users at once?
+        </p>
+        <p>
+            Here you can check IPO results of mulitple users at once. You need to simply provide the boid of each users
+            in the input field below.
+        </p>
+        <p>
+            How does this system works? <br>
+            First whenever a user visited this page, we send a request to https://iporesult.cdsc.com.np/ get the list of
+            companies.
+        </p>
+        <p>
+            Once you fill the boid, we validate it, we send the boids and company id to our backend. Then on the
+            backend, we make request to iporesult.cdsc.com.np for each boid. And send back the result.
+        </p>
+
+    </div>
+    <div class="wrapper">
+        <div class="form">
+            <div class="afield">
+                <textarea name="boids" id="boids" cols="41" rows="5"
+                    placeholder="comma seperated BOID. eg 130XXXXXXXXXXX11,130XXXXXXXXXXX23,130XXXXXXXXXXX49 "></textarea>
+            </div>
+            <div class="afield">
+                <select name="" id="companySelect"></select>
+            </div>
+            <div class="afield">
+                <button onclick="viewResult()">View Results</button>
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+        <div>
+            <p>
+
+            </p>
+        </div>
+        <div id="error">
+
+        </div>
+    </div>
+    <div>
+        <h2>iporesult.cdsc.com.np</h2>
+        <div class="content">
+
+            <p>
+                iporesult.cdsc.com.np is a website by CDS and Clearing Limited. It was first released on Feb 27,
+                2021 (<a href="https://calendar.bloggernepal.com/2077/11">BS 2077/11/15</a>)
+            </p>
+            <p>
+                In that website, you can select the company and provide your BOID number to check the result of your
+                IPO. Before this, we have to login to meroshare, view the results but because of the huge number of
+                requests meroshare used to be unresponsive.
+            </p>
+            <p>
+                A member, handels all the IPO related stuff of a family, thus if we can have a way to check the IPO
+                of all members at once it would be easy. Thus we decided to develop this.
+            </p>
+        </div>
+    </div>
+    <div style="flex: 2;"></div>
+
+    <div>
+        <a href="https://www.bloggernepal.com/">Blogger Nepal</a>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
