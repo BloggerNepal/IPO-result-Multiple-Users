@@ -47,11 +47,16 @@
 } */
 
 body {
-    text-align: center;
+    /* text-align: center; */
     padding: 20px;
     display: flex;
     flex-flow: column;
     min-height: calc(100vh - 40px);
+}
+
+h1,
+h2 {
+    text-align: center;
 }
 
 h4 {
@@ -103,4 +108,25 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.centerTable th,
+.centerTable td {
+    text-align: center;
+}
+
+.dp-list {
+    max-width: 100vw;
+    overflow-x: scroll;
+    border: solid;
+    padding: 5px;
+    margin: 10px;
+}
+
+.warning {
+    color: rgb(253, 19, 19)
+}
+
+.center-text {
+    text-align: center;
 }

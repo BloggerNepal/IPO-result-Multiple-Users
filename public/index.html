@@ -76,12 +76,750 @@
             </p>
         </div>
     </div>
+    <div>
+        <h2>BOID (Beneficial Owner Identification Number)</h2>
+        <div class="content">
+            <p>
+                BOID is a unique 16 digit identification number given to Beneficial Owner (user / person) when BO
+                opens the demat account in CDSC through an authorized DP (Depository Participants).
+            </p>
+            <h3>BOID Format</h3>
+            <p>
+                BOID has 3 components first 3 are constant (130). Next 5 are Depository Participants ID. And remaining 8
+                are for individual users. Thus is individual for each users. Depository Participants may inforce their
+                formating for latest 8 based on their branch. Atleast they can.
+            </p>
+            <p>
+                For BOID 1301850000000001 (taken randomly).
+            </p>
+            <table class="centerTable" border="1">
+                <tr>
+                    <th colspan="3">1301850000000001</th>
+                </tr>
+                <tr>
+                    <th>constant</th>
+                    <th>DPID</th>
+                    <th>UserID</th>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>18500</td>
+                    <td>00000001</td>
+                </tr>
+            </table>
+            <pre>
+      DP ID
+ +---+--^--+--------+
+ |130|18500|00000001|
+ +-v-+-----+----v---+
+constant     user ID
+            </pre>
+
+        </div>
+
+        <div>
+            <div class="content">
+                <h3>List of Depository Participants</h3>
+                <p>
+                    This list is from <a href="https://cdsc.com.np/listofdp">https://cdsc.com.np/listofdp</a>. <strong>
+                        If your Depository Participants is not on the list below, this system may not work for you.
+                    </strong>
+                    <strong class="warning">
+                        If your Depository Participants is not on the list below, this system may not work for you.
+                    </strong>
+                </p>
+            </div>
+
+            <div class="dp-list">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>S.N</th>
+                            <th>DPID</th>
+                            <th>DP NAME</th>
+                            <th>ADDRESS</th>
+                            <th>PHONE NO.</th>
+                            <th>EMAIL ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>10100</td>
+                            <td>CIVIL CAPITAL MARKET LIMITED</td>
+                            <td>6th FLOOR, CTC MALL,SUNDHARA,</td>
+                            <td>014262303,014261251</td>
+                            <td>ccm@civilcapital.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10200</td>
+                            <td>NIBL ACE CAPITAL LIMITED</td>
+                            <td>LAL COLONY MARG,LAL DURBAR,</td>
+                            <td>014426161</td>
+                            <td>acecapital@ace.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>10900</td>
+                            <td>Siddhartha Capital Limited</td>
+                            <td>ka. ma. na. pa. ward no. 1,Narayan Chour, Naxal,</td>
+                            <td>014420924,014420925</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>10400</td>
+                            <td>NABIL INVESTMENT BANKING LTD.</td>
+                            <td>NARAYANCHOUR,NAXAL,</td>
+                            <td>014411604,014411733</td>
+                            <td>info@nabilinvest.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>10600</td>
+                            <td>NIBL ACE CAPITAL LIMITED</td>
+                            <td>Lazimpat</td>
+                            <td>014005080,014005058</td>
+                            <td>info@niblcapital.com</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>10700</td>
+                            <td>Laxmi Capital Market Ltd.</td>
+                            <td>NAYABANESHWOR,,</td>
+                            <td>014780222,014781582</td>
+                            <td>info@laxmicapital.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>10800</td>
+                            <td>EVEREST BANK LTD.</td>
+                            <td>Lazimpat,,</td>
+                            <td>014443377</td>
+                            <td>ebl@mos.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>11400</td>
+                            <td>TRISHAKTI SECURITIES PUBLIC LIMITED</td>
+                            <td>PUTALISADAK,,</td>
+                            <td>014232132</td>
+                            <td>trishantisecurities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>11500</td>
+                            <td>NEPAL STOCK HOUSE PRIVATE LIMITED</td>
+                            <td>WARD NO. 29,KALIKASTHAN,</td>
+                            <td>01-4529621,4529631,4536959</td>
+                            <td>nshplktm@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11600</td>
+                            <td>SECURED SECURITIES LIMITED</td>
+                            <td>KA. MA. NA. PA. 31,PRADARSHANI MARG,JOSHI COMPLEX, 1ST FLOOR</td>
+                            <td>014262861,014224523</td>
+                            <td>ss36nepal@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>12200</td>
+                            <td>Global IME bank ltd.</td>
+                            <td>SHANKHAMUL MARG,NAYA BANESHWOR,</td>
+                            <td>014786100,014785900</td>
+                            <td>janatadp@gibl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>13100</td>
+                            <td>IMPERIAL SECURITIES COMPANY PRIVATE LIMITED</td>
+                            <td>K.M.C.-32, ANAMNAGAR,HANUMANSTHAN,</td>
+                            <td>015706004,015705187</td>
+                            <td>45.imperial@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>13000</td>
+                            <td>SOUTH ASIAN BULLS PRIVATE LIMITED</td>
+                            <td>TULSI KRISHNA PLAZA,2ND FLOOR,KULESWOR</td>
+                            <td>014273400,014273400</td>
+                            <td>sabullsp@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>12700</td>
+                            <td>SEWA SECURITIES PRIVATE LIMITED</td>
+                            <td>TRIPURESWOR,KATHMANDU,</td>
+                            <td>014256642,014256644</td>
+                            <td>sewasecurities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>12800</td>
+                            <td>PRIMO SECURITIES PRIVATE LIMITED</td>
+                            <td>SHANKER DEV MARG,PUTALISADAK,</td>
+                            <td>014168175,014168164</td>
+                            <td>primo.securities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>11000</td>
+                            <td>NMB CAPITAL LIMITED</td>
+                            <td>NAGPOKHARI,KATHMANDU,</td>
+                            <td>014437963,014437964</td>
+                            <td>info@nmbcl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>11100</td>
+                            <td>BANK OF KATHMANDU LIMITED</td>
+                            <td>ANAMNAGAR,,</td>
+                            <td>014770414,014770413</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>11200</td>
+                            <td>GLOBAL IME CAPITAL LIMITED</td>
+                            <td>Laxman Babu Bhawan 1st Floor, Naxal , Kathmandu</td>
+                            <td>01-4445649, 01-4445650</td>
+                            <td>info@gicl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>12300</td>
+                            <td>AGRAWAL SECURITIES PRIVATE LIMITED</td>
+                            <td>RADHE MARG,DILLIBAZAR,</td>
+                            <td>014424406,014431597</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>12900</td>
+                            <td>SHREE KRISHNA SECURITIES LIMITED</td>
+                            <td>3RD FLOOR, ALLIANCE TOWER,CHARKHAL ROAD,DILLIBAZAR</td>
+                            <td>014441225,014441226</td>
+                            <td>mundara@wlink.com.np/skslkathmandu@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>12600</td>
+                            <td>PRABHU CAPITAL LIMITED</td>
+                            <td>KAMALADI,KATHMANDU,</td>
+                            <td>01-5970200 01-4169100</td>
+                            <td>info@prabhucapital.com</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>13300</td>
+                            <td>CREATIVE SECURITIES PRIVATE LIMITED</td>
+                            <td>KAMALPOKHARI,KATHMANDU,</td>
+                            <td>014419582</td>
+                            <td>creativesec2011@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>13200</td>
+                            <td>ABC SECURITIES PRIVATE LIMITED</td>
+                            <td>INDRACHOWK,KATHMANDU,</td>
+                            <td>01 5905499,5905490,5905491,590607,5905586</td>
+                            <td>abcsecurities17@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>11300</td>
+                            <td>DIPSHIKHA DHITOPATRA KAROBAR COMPANY (P.) LTD.</td>
+                            <td>ANAMNAGAR - 32,,</td>
+                            <td>014102532,014102534</td>
+                            <td>info@ddkc.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>11800</td>
+                            <td>ONLINE SECURITIES PRIVATE LIMITED</td>
+                            <td>PUTALISADAK,KATHMANDU,</td>
+                            <td>014168308,014168302</td>
+                            <td>onlinesecurities_49@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>11700</td>
+                            <td>CITIZENS BANK INTERNATIONAL LIMITED</td>
+                            <td>NARAYANHITY PATH,,</td>
+                            <td>4427842,4427843</td>
+                            <td>info@ctznbank.com</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>11900</td>
+                            <td>ARYATARA INVESTMENT AND SECURITIES PRIVATE LIMITED</td>
+                            <td>ANAMNAGAR 32,KATHMANDU,</td>
+                            <td>015705596,015706297</td>
+                            <td>aryatara57@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>12000</td>
+                            <td>DAKSHINKALI INVESTMENT AND SECURITIES PRIVATE LIMITED</td>
+                            <td>KAMALADI,,</td>
+                            <td>014168640,014168641</td>
+                            <td>displtd@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>12500</td>
+                            <td>MUKTINATH CAPITAL LIMITED</td>
+                            <td>Hattisar Sadak, Kamaladi, Kathmandu</td>
+                            <td>01-4546108, 01-4546109, 01- 4546470</td>
+                            <td>info@muktinathcapital.com dpsupport@muktinathcapital.com</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>12400</td>
+                            <td>SUNRISE CAPITAL LIMITED</td>
+                            <td>KAMALPOKHARI,,</td>
+                            <td>014439676,014425343</td>
+                            <td>info@sunrisecapital.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>13800</td>
+                            <td>LINCH STOCK MARKET LIMITED</td>
+                            <td>NEW BANESHWOR,KATHMANDU,</td>
+                            <td>014469367,014469068</td>
+                            <td>linchstockmarket@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>14600</td>
+                            <td>SIPLA SECURITIES PRIVATE LIMITED</td>
+                            <td>KHICHAPOKHARI,KATHMANDU,</td>
+                            <td>014255782,014255078</td>
+                            <td>sipla20@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>16800</td>
+                            <td>Nabil Bank Ltd</td>
+                            <td>DURBARMARG, KATHMANDU,,</td>
+                            <td>01-4241648</td>
+                            <td>info@ufl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>16900</td>
+                            <td>PRIME COMMERCIAL BANK LIMITED</td>
+                            <td>KAMALPOKHARI, KATHMANDU,,</td>
+                            <td>014423433,014423215</td>
+                            <td>info@pcbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>17300</td>
+                            <td>MEGA CAPITAL MARKETS LIMITED</td>
+                            <td>TRIPURESHWOR, KATHMANDU,,</td>
+                            <td>01-5362790, 01-5362772, 01-5362775, 01-5362812, 01-5364596, 01-5364109, 01-5364889
+                            </td>
+                            <td>info@megacapitalmarkets.com</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>17400</td>
+                            <td>ICFC FINANCE LIMITED</td>
+                            <td>BHATBHATENI, NAXAL,,</td>
+                            <td>014425292,014425292</td>
+                            <td>info@icfcbank.com</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>17500</td>
+                            <td>WEALTH MANAGEMENT AND MERCHANT BANKING LIMITED</td>
+                            <td>MAITIDEVI COMPLEX , KATHMANDU,,</td>
+                            <td>014418664,014418664</td>
+                            <td>wmmbltd@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td>13400</td>
+                            <td>CRYSTAL KANCHANJUNGHA SECURITIES PVT. LTD</td>
+                            <td>NEW PLAZA,KATHMANDU,</td>
+                            <td>014011176</td>
+                            <td>crystalkanchanjungha@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>14400</td>
+                            <td>SANI SECURITIES COMPANY LIMITED</td>
+                            <td>Laxman Babu Bhawan, 1st Floor, Naxal , Kathmandu</td>
+                            <td>01-4442209,01-4442210,01-4442276,01-4442072,014424641</td>
+                            <td>sani.securities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>14500</td>
+                            <td>DEEVYAA SECURITIES &amp; STOCK HOUSE PRIVATE LIMITED</td>
+                            <td>PUTALISADAK,KATHMANDU,</td>
+                            <td>014421488</td>
+                            <td>deevya59@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td>15400</td>
+                            <td>Prime Commercial Bank Ltd</td>
+                            <td>NEWPLAZA,,</td>
+                            <td>014443034,014443034</td>
+                            <td>info@kailashbank.com</td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>17600</td>
+                            <td>KCL ASTUTE CAPITAL LIMITED</td>
+                            <td>HATTISAR -1, KATHMANDU,,</td>
+                            <td>014429149,014429150</td>
+                            <td>info@astute.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>13700</td>
+                            <td>NIC ASIA BANK LIMITED</td>
+                            <td>TRADE TOWER NEPAL,THAPATHALI,KATHMANDU</td>
+                            <td>015111179,015111178</td>
+                            <td>info@nicasiabank.com</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>15100</td>
+                            <td>NEPAL BANGLADESH BANK LIMITED</td>
+                            <td>GHANTAGHAR,KATHMANDU,</td>
+                            <td>014233780,014233781</td>
+                            <td>nbbldp@nbbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>15700</td>
+                            <td>NEPAL BANK LIMITED</td>
+                            <td>DHARMAPATH,,</td>
+                            <td>014221185 Ext 613,014247999 Ext 604</td>
+                            <td>nblshareunit@nbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>16400</td>
+                            <td>NATIONAL MERCHANT BANKER LIMITED</td>
+                            <td>Charkhal Road, Dillibazar, Kathmandu -30</td>
+                            <td>014430746,014430746</td>
+                            <td>info@nmbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td>16100</td>
+                            <td>MACHHAPUCHCHHRE BANK LIMITED</td>
+                            <td>LAZIMPAT,,</td>
+                            <td>014428556,014428556</td>
+                            <td>machbank@mbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>16500</td>
+                            <td>RBB MERCHANT BANKING LIMITED</td>
+                            <td>TEKU, KATHMANDU,,</td>
+                            <td>014243265,</td>
+                            <td>rbbmbl@rbbmbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>17000</td>
+                            <td>OXFORD SECURITIES PVT. LTD.</td>
+                            <td>KALIMATI, KATHMANDU,,</td>
+                            <td>014273850,</td>
+                            <td>broker_51@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>15900</td>
+                            <td>NAASA SECURITIES COMPANY LTD</td>
+                            <td>NAXAL,,</td>
+                            <td>014440384,014440386</td>
+                            <td>naasasecurities58@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>51</td>
+                            <td>16200</td>
+                            <td>GUHESWORI MERCHANT BANKING &amp; FINANCE LIMITED</td>
+                            <td>PULCHOK, LALITPUR,,</td>
+                            <td>015550406,015537407</td>
+                            <td>archana.pradhan@gmbf.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>16300</td>
+                            <td>NEPAL CREDIT AND COMMERCE BANK LIMITED</td>
+                            <td>BAGBAZAR,,</td>
+                            <td>,</td>
+                            <td>nccdp@nccbank.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>53</td>
+                            <td>17100</td>
+                            <td>TRISHUL SECURITIES &amp; INVESTMENT LIMITED</td>
+                            <td>NEWPLAZA, KATHMANDU,,</td>
+                            <td>014440709,014440709</td>
+                            <td>broker.trisul@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>14000</td>
+                            <td>SRI HARI SECURITIES PVT. LTD.</td>
+                            <td>HATTISAR ROAD,KAMALADI, KATHMANDU,</td>
+                            <td>014437562,014437465</td>
+                            <td>info@srihari.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>15000</td>
+                            <td>BHRIKUTI STOCK BROKING COMPANY PRIVATE LIMITED</td>
+                            <td>NEWROAD,KATHMANDU,</td>
+                            <td>014223466,</td>
+                            <td>rajibnepal@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>15200</td>
+                            <td>KUMARI BANK LIMITED</td>
+                            <td>NAXAL,KATHMANDU,</td>
+                            <td>01-4445495,4445496</td>
+                            <td>dp@kumaricapital.com</td>
+                        </tr>
+                        <tr>
+                            <td>57</td>
+                            <td>16700</td>
+                            <td>MAHALAXMI BIKAS BANK LIMITED</td>
+                            <td>DURBARMARG, KATHMANDU,,</td>
+                            <td>014268162,014268208</td>
+                            <td>info@mahalaxmi.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>58</td>
+                            <td>13600</td>
+                            <td>MARKET SECURITIES EXCHANGE COMPANY PVT. LTD</td>
+                            <td>OM DEV PLAZA COMPLEX,BLOCK B, 4TH FLOOR,KHICHAPOKHARI</td>
+                            <td>014248973,014249558</td>
+                            <td>mkt.securities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>59</td>
+                            <td>14100</td>
+                            <td>Machhapuchhre Kriti Capital Ltd</td>
+                            <td>BAGDURBAR, SUNDHARA,JDA COMPLEX, KATHMANDU,</td>
+                            <td>014266325,014249453</td>
+                            <td>kriticapital@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>14700</td>
+                            <td>ASIAN SECURITIES PRIVATE LIMITED</td>
+                            <td>PUTALISADAK,KATHMANDU,</td>
+                            <td>014424351,014424485</td>
+                            <td>asiansecurities26@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>15800</td>
+                            <td>SANIMA BANK LTD</td>
+                            <td>NAXAL,,</td>
+                            <td>014229124,014229125</td>
+                            <td>manishjoshi.sc@sanimabank.com</td>
+                        </tr>
+                        <tr>
+                            <td>62</td>
+                            <td>16000</td>
+                            <td>CENTURY COMMERCIAL BANK LIMITED</td>
+                            <td>PUTALISADAK,,</td>
+                            <td>014445062,014412579</td>
+                            <td>welcome@centurybank.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>63</td>
+                            <td>17200</td>
+                            <td>AGRICULTURAL DEVELOPMENT BANK LIMITED</td>
+                            <td>RAMSHAHPATH, KATHMANDU,,</td>
+                            <td>014251537,014251537</td>
+                            <td>asba@adbl.gov.np</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>13500</td>
+                            <td>VISION SECURITIES PVT. LTD</td>
+                            <td>ANAMNAGAR, 32,,</td>
+                            <td>014770452,014770425</td>
+                            <td>visionsecurities@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>65</td>
+                            <td>13900</td>
+                            <td>PRABHU BANK LIMITED</td>
+                            <td>BABARMAHAL,KATHMANDU,</td>
+                            <td>014788500</td>
+                            <td>info@prabhubank.com</td>
+                        </tr>
+                        <tr>
+                            <td>66</td>
+                            <td>14200</td>
+                            <td>SUMERU SECURITIES PRIVATE LIMITED</td>
+                            <td>Gyaneshwor - 30, Kathmandu</td>
+                            <td>01-5970439, 980126300</td>
+                            <td>admin@sumerusecurities.com; compliance@sumerusecurities.com;
+                                sumerusecurities@gmail.com;</td>
+                        </tr>
+                        <tr>
+                            <td>67</td>
+                            <td>14300</td>
+                            <td>KOHINOOR INVESTMENT &amp; SECURITIES PRIVATE LIMITED</td>
+                            <td>HATTISAR, KAMAL POKHARI,KATHMANDU,</td>
+                            <td>014442857,014442858</td>
+                            <td>kohinoorinvest@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>68</td>
+                            <td>14800</td>
+                            <td>PREMIER SECURITIES COMPANY LIMITED</td>
+                            <td>NEWPLAZA, PUTALISADAK,KATHMANDU,</td>
+                            <td>01 4532832, 4532704, 4532700, 4532705</td>
+                            <td>premiersecurities@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>14900</td>
+                            <td>DYNAMIC MONEY MANAGERS SECURITIES PRIVATE LIMITED</td>
+                            <td>KAMALPOKHARI-31,KATHMANDU,</td>
+                            <td>014414285,</td>
+                            <td>admin@dynamic44.com</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>15300</td>
+                            <td>NEPAL SBI BANK LIMITED</td>
+                            <td>HATTISAR,,</td>
+                            <td>014412743,014441780</td>
+                            <td>sharedpt@nsbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>71</td>
+                            <td>15500</td>
+                            <td>NEPAL DP LIMITED</td>
+                            <td>PUTALISADAK,,</td>
+                            <td>014227086,014227086</td>
+                            <td>nepaldpltd@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>15600</td>
+                            <td>ASHUTOSH BROKERAGE AND SECURITIES PRIVATE LIMITED</td>
+                            <td>KHICHAPOKHARI,,</td>
+                            <td>014220276,014220276</td>
+                            <td>broker8ash@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>73</td>
+                            <td>16600</td>
+                            <td>PROVIDENT MERCHANT BANKING LIMITED</td>
+                            <td>KATHMANDU 35, BALKUMARI,BRIDGE,</td>
+                            <td>5147097,5147192</td>
+                            <td>provident mbl@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>74</td>
+                            <td>17700</td>
+                            <td>HIMALAYAN CAPITAL LIMITED</td>
+                            <td>THAMEL,KATHMANDU,</td>
+                            <td>014258345,014263147</td>
+                            <td>info@himalayancapital.com</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td>17800</td>
+                            <td>SUNDHARA SECURITIES LIMITED</td>
+                            <td>Sundhara, Bagdurbar, Kathmandu</td>
+                            <td>01 4212215,4263583,4260174</td>
+                            <td>sundharasecurities52@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>17900</td>
+                            <td>Jyoti Bikash Bank Limited</td>
+                            <td>Kamlpokhari 1, Kathmandu</td>
+                            <td>015970301, 5970303, 5970304, 5970306</td>
+                            <td>info@jbbl.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>77</td>
+                            <td>18000</td>
+                            <td>Gurkhas Finance Limited</td>
+                            <td>Charkhal Road, Dillibazar, Kathmandu</td>
+                            <td>01-4437401, 01-4437403</td>
+                            <td>info@gurkhasfinance.com.np</td>
+                        </tr>
+                        <tr>
+                            <td>78</td>
+                            <td>18100</td>
+                            <td>Sampanna Capital &amp; Advisory Nepal Limited</td>
+                            <td>Alpha Beta Complex, New Baneshwor, Kathmandu</td>
+                            <td>01-4782847</td>
+                            <td>infosampanna.capital.com</td>
+                        </tr>
+                        <tr>
+                            <td>79</td>
+                            <td>18200</td>
+                            <td>Kamana Sewa Bikas Bank Ltd</td>
+                            <td>Gyaneshwor, Anandabhairav Marg, Kathmandu</td>
+                            <td>01-4440115, 01-4440116</td>
+                            <td>info@kamanasewabank.com</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>18300</td>
+                            <td>Swarnalaxmi Securities PVT.LTD.</td>
+                            <td>Putalisadak, Kathmandu</td>
+                            <td>01-4168219 01-4168291</td>
+                            <td>swarnalaxmisecurities@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>81</td>
+                            <td>18400</td>
+                            <td>Shangri-la Development Bank LTD.</td>
+                            <td>Baluwatar, Kathmandu</td>
+                            <td>01-4421861 01-4421862</td>
+                            <td>info@shangrilabank.com</td>
+                        </tr>
+                        <tr>
+                            <td>82</td>
+                            <td>18500</td>
+                            <td>Shine Resunga Development Bank LTD.</td>
+                            <td>Butwal-11, Rupandehi</td>
+                            <td>071-415502, 071-415503</td>
+                            <td>info@srdb.com.np;</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
     <div style="flex: 2;"></div>
 
-    <div>
+    <div class="center-text">
+        <br>
+        <br>
         <a href="https://www.bloggernepal.com/">Blogger Nepal</a>
+        <br>
+        <br>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="dpid.js"></script>
     <script src="index.js"></script>
 
 </body>

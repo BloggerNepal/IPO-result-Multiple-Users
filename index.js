@@ -1,8 +1,10 @@
-const axios = require('axios');
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+
+const axios = require('axios');
+
+const dpids = require('./dpid');
 
 const requestHandeler = (req, res) => {
     let method = req.method;
@@ -19,10 +21,10 @@ const requestHandeler = (req, res) => {
 
     console.log(method, url, queries);
 
-    if (method == "GET" && (url == "/" || url == "/index.css" || url == "/index.js")) {
+    if (method == "GET" && (url == "/" || url == "/index.css" || url == "/index.js" || url == "/dpid.js")) {
         let file;
         let contentType;
-        if (url == "/" || url == 'index.html') {
+        if (url == "/" || url == '/index.html') {
             file = 'public/index.html';
             contentType = 'text/html'
         }
@@ -32,6 +34,10 @@ const requestHandeler = (req, res) => {
         }
         if (url == '/index.js') {
             file = 'public/index.js';
+            contentType = 'application/javascript'
+        }
+        if (url == '/dpid.js') {
+            file = 'dpid.js';
             contentType = 'application/javascript'
         }
         var filePath = path.join(__dirname, file);
@@ -61,7 +67,15 @@ const requestHandeler = (req, res) => {
 
             let promises = [];
             data.boidArray.forEach(element => {
-                promises.push(getIPOResult(element, data.companyShareId));
+
+                // let's first validate the boid
+
+                let dpid = element.slice(0, 8);
+                if (dpids[dpid]) {
+                    // console.log("valid dpid");
+                    promises.push(getIPOResult(element, data.companyShareId));
+                }
+
             });
 
             Promise.all(promises).then(results => {

@@ -32,7 +32,15 @@ const viewResult = () => {
 
         if (id.length == 16) {
             if (!isNaN(id)) {
-                boidArray.push(id);
+
+                // let's validate that, the boid is valid
+                let dpid = id.slice(0, 8);
+
+                if (dpids[dpid]) {
+                    boidArray.push(id);
+                } else {
+                    showError(id);
+                }
 
             } else {
                 showError(id);
