@@ -32,11 +32,12 @@
         </p>
 
     </div>
+
     <div class="wrapper">
         <div class="form">
             <div class="afield">
                 <textarea name="boids" id="boids" cols="41" rows="5"
-                    placeholder="comma seperated BOID. eg 130XXXXXXXXXXX11,130XXXXXXXXXXX23,130XXXXXXXXXXX49 "></textarea>
+                    placeholder="comma seperated BOID. eg 130XXXXXXXXXXX11,130XXXXXXXXXXX23,130XXXXXXXXXXX49  Or with user's name name,boid,... eg. Ram,130XXXXXXXXXXX11,Hari,130XXXXXXXXXXX23,Sita,130XXXXXXXXXXX49"></textarea>
             </div>
             <div class="afield">
                 <select name="" id="companySelect"></select>
@@ -57,6 +58,40 @@
 
         </div>
     </div>
+
+    <div class="content">
+        <p>
+            <strong>Input Format</strong>
+        </p>
+        <p>
+            You can input Comma Seperated BOID.
+        </p>
+        <pre>
+            eg 130XXXXXXXXXXX11,130XXXXXXXXXXX23,130XXXXXXXXXXX49
+        </pre>
+        <p>
+            For each valid BOID you entered, you will get result back as <br> <br>
+            BOID - Not Alloted <br>
+            BOID - Alloted | Quantity: 10(valid) <br>
+        </p>
+        <p>
+            <strong>BOID with name</strong> you can provide the user's name as well. On this format
+            name,boid,name2,boid2
+        </p>
+        <pre>
+            eg Ram,130XXXXXXXXXXX11,Hari,130XXXXXXXXXXX23,Sita,130XXXXXXXXXXX49
+        </pre>
+        <p>
+            For each valid BOID you entered, you will get result back as
+            <br> <br>
+            BOID1 name1 - Not Alloted <br>
+            BOID2 name2 - Alloted | Quantity: 10(valid) <br>
+
+        </p>
+
+        </p>
+    </div>
+
     <div>
         <h2>iporesult.cdsc.com.np</h2>
         <div class="content">
@@ -76,6 +111,7 @@
             </p>
         </div>
     </div>
+
     <div>
         <h2>BOID (Beneficial Owner Identification Number)</h2>
         <div class="content">
@@ -809,12 +845,14 @@ constant     user ID
         </div>
 
     </div>
+
     <div style="flex: 2;"></div>
 
     <div class="center-text">
         <br>
         <br>
-        <a href="https://www.bloggernepal.com/">Blogger Nepal</a>
+        <a href="https://www.bloggernepal.com/">Blogger Nepal</a> |
+        <a href="https://github.com/BloggerNepal/IPO-result-Multiple-Users">Github Repo.</a>
         <br>
         <br>
     </div>

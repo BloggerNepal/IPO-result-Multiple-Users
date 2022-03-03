@@ -26,29 +26,21 @@ const viewResult = () => {
     let company = document.getElementById("companySelect").value;
 
     let boidArray = [];
-    let boidsA = boids.split(",")
-    boidsA.forEach(element => {
-        let id = element.trim();
 
-        if (id.length == 16) {
-            if (!isNaN(id)) {
+    let users = parseInput(boids);
 
-                // let's validate that, the boid is valid
-                let dpid = id.slice(0, 8);
+    users.forEach(element => {
 
-                if (dpids[dpid]) {
-                    boidArray.push(id);
-                } else {
-                    showError(id);
-                }
+        boidArray.push(element.boid);
 
-            } else {
-                showError(id);
-            }
-        } else {
-            showError(id);
-        }
     });
+
+    // console.log({
+    //     users,
+    //     boidArray
+    // })
+
+    // boidArray.length = 0; // for test
 
     if (boidArray.length > 0) {
         axios.post("/", {
@@ -60,11 +52,11 @@ const viewResult = () => {
             // console.log(data);
             data.results.forEach((element, index) => {
                 if (!element.success) {
-                    showNotAlloted(data.boidArray[index])
+                    showNotAlloted(data.boidArray[index], users[index])
                 }
                 if (element.success) {
                     let allotedAmount = element.message.split(":")[1].trim();
-                    showAlloted(data.boidArray[index], allotedAmount);
+                    showAlloted(data.boidArray[index], allotedAmount, users[index]);
                 }
             });
         }).catch(error => {
@@ -96,16 +88,24 @@ const showError = (id) => {
     document.getElementById("error").appendChild(span);
 }
 
-const showAlloted = (id, quantity) => {
-    message = `${id} - Alloted | Quantity: ${quantity}`;
+const showAlloted = (id, quantity, user) => {
+    let name = "";
+    if (id == user.boid) {
+        name = user.name;
+    }
+    message = `${id} ${name} - Alloted | Quantity: ${quantity}`;
     let span = document.createElement('span');
     span.setAttribute("class", "alloted")
     span.innerText = message;
     document.getElementById("result").appendChild(span);
 }
 
-const showNotAlloted = (id) => {
-    message = `${id} - Not Alloted.`
+const showNotAlloted = (id, user) => {
+    let name = "";
+    if (id == user.boid) {
+        name = user.name;
+    }
+    message = `${id} ${name} - Not Alloted.`
     let span = document.createElement('span');
     span.setAttribute("class", "not-alloted")
     span.innerText = message;
@@ -115,4 +115,55 @@ const showNotAlloted = (id) => {
 const clearResultAndError = () => {
     document.getElementById("error").innerText = ""
     document.getElementById("result").innerText = ""
+}
+
+
+const parseInput = (input) => {
+
+    let boidsA = input.split(",");
+
+    let users = [];
+
+    boidsA.forEach((element, index) => {
+        // we will check if this element is a vaid boid
+        // if not ignore this.
+        // if is valid we will get previous element,
+        // if previous is a valid boid, this boid have no name
+        // if previous element is not a valid boid, we set it as this boid's name
+
+        element = element.trim();
+
+        let name = "";
+        if (isValidBOID(element)) {
+
+            let preIndex = index - 1;
+            let preElement = preIndex >= 0 ? boidsA[preIndex] : "";
+            if (!isValidBOID(preElement)) {
+                name = preElement;
+            } else {
+                name = "";
+            }
+
+            users.push({
+                name,
+                boid: element
+            })
+        }
+    });
+
+    return users;
+}
+
+const isValidBOID = (boid) => {
+    if (boid.length != 16) {
+        return false;
+    }
+
+    let dpid = boid.slice(0, 8);
+
+    if (dpids[dpid]) {
+        return true
+    } else {
+        return false
+    }
 }
